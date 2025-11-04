@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pulkit Dubey</title>
+    <link rel="icon" href="logo.png" type="image/png" />
+    <link rel="shortcut icon" href="logo.png" type="image/png" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+    <style>
+      :root {
+        --bg-dark: #0a192f;
+        --section-bg: #112240;
+        --text-light: #ccd6f6;
+        --text-muted: #8892b0;
+        --accent: #64ffda;
+      }
+
+      .light {
+        --bg-dark: #fff7ed;
+        --section-bg: #ffedd5;
+        --text-light: #1f2937;
+        --text-muted: #4b5563;
+        --accent: #f97316;
+      }
+
+      body {
+        font-family: "Fira Code", monospace;
+        background-color: var(--bg-dark);
+        color: var(--text-light);
+      }
+
+      ::selection {
+        background-color: var(--accent);
+        color: #fff;
+      }
+
+      #logo {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body class="transition-colors duration-300 scroll-smooth">
+    <!-- Header -->
+    <header
+      class="fixed top-0 left-0 z-50 w-full shadow-md"
+      style="background-color: rgba(10, 25, 47, 0.9)"
+    >
+      <nav class="flex items-center justify-between px-6 py-4">
+        <div class="flex items-center gap-4">
+          <!-- Logo as toggle button -->
+          <div
+            id="logo"
+            style="background-color: var(--accent)"
+            class="p-1 rounded-lg"
+            title="Toggle Light/Dark Mode"
+          >
+            <img src="logo.png" alt="logo" class="h-10" />
+          </div>
+        </div>
+
+        <!-- Desktop Menu -->
+        <ol class="hidden gap-6 text-sm md:flex">
+          <li><a href="#about" class="hover:text-[var(--accent)]">About</a></li>
+          <li>
+            <a href="#experience" class="hover:text-[var(--accent)]"
+              >Experience</a
+            >
+          </li>
+          <li>
+            <a href="#projects" class="hover:text-[var(--accent)]">Projects</a>
+          </li>
+          <li>
+            <a href="#contact" class="hover:text-[var(--accent)]">Contact</a>
+          </li>
+        </ol>
+
+        <a
+          href="#"
+          class="hidden px-4 py-1 text-sm transition border-2 rounded md:inline-block hover:scale-105"
+          style="border-color: var(--accent); color: var(--accent)"
+          >Resume</a
+        >
+
+        <!-- Mobile Menu Button -->
+        <button
+          id="menuToggle"
+          class="ml-4 text-xl md:hidden"
+          style="color: var(--accent); position: sticky;"
+        >
+          ☰
+        </button>
+      </nav>
+      <marquee behavior="scroll" direction="left" scrollamount="8" style="color: white; background-color: rgb(110, 125, 170); font-size: 22px; padding: 10px; font-family: Arial, sans-serif;">
+        🚧 Website is Under Construction — Something Cool is Coming Soon! 😊
+      </marquee>
+      <!-- Mobile Menu -->
+      <div
+        id="mobileMenu"
+        class="flex-col hidden gap-4 px-6 pb-4 text-sm md:hidden bg-opacity-80"
+        style="background-color: var(--bg-dark)"
+      >
+        <a href="#about" class="hover:text-[var(--accent)]">About</a>
+        <a href="#experience" class="hover:text-[var(--accent)]">Experience</a>
+        <a href="#projects" class="hover:text-[var(--accent)]">Projects</a>
+        <a href="#contact" class="hover:text-[var(--accent)]">Contact</a>
+        <a href="#" class="border-t pt-2 mt-2 text-[var(--accent)]">Resume</a>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-5xl px-6 pt-24 mx-auto sm:px-10">
+      <!-- Hero -->
+      <section
+        class="min-h-[80vh] flex items-center justify-center text-center md:text-left"
+        data-aos="fade-up"
+      >
+        <div class="space-y-4">
+          <p style="color: var(--accent)">Hi, my name is</p>
+          <h1 class="text-4xl font-extrabold sm:text-6xl">Pulkit Dubey</h1>
+          <p class="text-lg sm:text-xl" style="color: var(--text-muted)">
+            🎓 BCA Student | Aspiring Full-Stack Web Developer | Skilled in
+            HTML, CSS & JavaScript | Passionate About AI & Competitive
+            Programming
+          </p>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section id="about" class="py-16" data-aos="fade-right">
+        <h2 class="mb-4 text-3xl font-bold" style="color: var(--accent)">
+          About Me
+        </h2>
+        <p class="text-lg leading-loose" style="color: var(--text-muted)">
+          I'm a BCA student (2022–25) at Maulana Mazharul Haque Arabic & Persian
+          University, Patna. I enjoy building full-stack applications and
+          exploring AI. With a strong foundation in HTML, CSS, JavaScript,
+          React, and databases, I'm constantly learning and evolving as a
+          developer.
+        </p>
+      </section>
+
+      <!-- Experience -->
+      <section
+        id="experience"
+        class="py-16"
+        style="background-color: var(--section-bg)"
+        data-aos="fade-up"
+      >
+        <h2 class="mb-4 text-3xl font-bold" style="color: var(--accent)">
+          Education
+        </h2>
+        <ul class="space-y-3 text-lg" style="color: var(--text-muted)">
+          <li>
+            <strong style="color: var(--text-light)">BCA (2022–25)</strong> –
+            MMHAPU, Patna
+          </li>
+          <li>
+            <strong style="color: var(--text-light)">Class 12 (2022)</strong> –
+            CBSE | 67%
+          </li>
+          <li>
+            <strong style="color: var(--text-light)">Class 10 (2020)</strong> –
+            CBSE | 82%
+          </li>
+        </ul>
+      </section>
+
+      <!-- Projects -->
+      <section id="projects" class="py-16" data-aos="fade-up">
+  <h2 class="mb-6 text-3xl font-bold" style="color: var(--accent)">
+    Projects
+  </h2>
+
+  <!-- Existing Project Card -->
+  <div
+    class="p-6 mb-8 shadow-lg rounded-xl"
+    style="background-color: var(--section-bg)"
+  >
+    <h3 class="mb-2 text-2xl font-semibold">
+      Balaji Computer Academy Website
+    </h3>
+    <p class="mb-4 text-sm" style="color: var(--text-muted)">
+      Tech Stack: HTML, CSS, JavaScript, Bootstrap
+    </p>
+    <p>
+      Developed a responsive, SEO-friendly educational website with course
+      listings and contact sections...
+    </p>
+    <a
+      href="https://balajicomputeracademy.netlify.app/"
+      class="inline-block mt-2 transition duration-300 hover:underline hover:scale-105"
+      style="color: var(--accent)"
+      >View Project</a
+    >
+  </div>
+
+  <!-- New Project Card -->
+  <div
+    class="p-6 shadow-lg rounded-xl"
+    style="background-color: var(--section-bg)"
+  >
+    <h3 class="mb-2 text-2xl font-semibold">
+      Personal Portfolio Website
+    </h3>
+    <p class="mb-4 text-sm" style="color: var(--text-muted)">
+      Tech Stack: HTML, CSS, JavaScript, AOS, Netlify
+    </p>
+    <p>
+      Designed and deployed a modern personal portfolio to showcase my projects,
+      skills, and contact information with smooth animations and responsive design.
+    </p>
+    <a
+      href="https://pulkitdubey046.netlify.app/"
+      class="inline-block mt-2 transition duration-300 hover:underline hover:scale-105"
+      style="color: var(--accent)"
+      >View Project</a
+    >
+  </div>
+</section>
+>
+      
+      <!-- Skills -->
+      <section
+        class="py-16"
+        style="background-color: var(--bg-dark)"
+        data-aos="fade-left"
+      >
+        <h2 class="mb-6 text-3xl font-bold" style="color: var(--accent)">
+          Skills
+        </h2>
+        <div class="flex flex-wrap gap-3">
+          <span
+            class="px-3 py-1 text-sm rounded"
+            style="background-color: var(--section-bg)"
+            >HTML</span
+          >
+          <span
+            class="px-3 py-1 text-sm rounded"
+            style="background-color: var(--section-bg)"
+            >CSS</span
+          >
+          <span
+            class="px-3 py-1 text-sm rounded"
+            style="background-color: var(--section-bg)"
+            >JavaScript</span
+          >
+          <span
+            class="px-3 py-1 text-sm rounded"
+            style="background-color: var(--section-bg)"
+            >React.js</span
+          >
+          <span
+            class="px-3 py-1 text-sm rounded"
+            style="background-color: var(--section-bg)"
+            >Node.js</span
+          >
+          <span
+            class="px-3 py-1 text-sm rounded"
+            style="background-color: var(--section-bg)"
+            >MongoDB</span
+          >
+          <span
+            class="px-3 py-1 text-sm rounded"
+            style="background-color: var(--section-bg)"
+            >GitHub</span
+          >
+          <span
+            class="px-3 py-1 text-sm rounded"
+            style="background-color: var(--section-bg)"
+            >Netlify</span
+          >
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section
+        id="contact"
+        class="py-16 text-center"
+        style="background-color: var(--section-bg)"
+        data-aos="zoom-in"
+      >
+        <h2 class="mb-6 text-3xl font-bold" style="color: var(--accent)">
+          Contact
+        </h2>
+        <p>
+          📧
+          <a
+            href="mailto:pulkitdubey046@gmail.com"
+            class="hover:underline"
+            style="color: var(--accent)"
+            >pulkitdubey046@gmail.com</a
+          >
+        </p>
+        <p>
+          📞
+          <a
+            href="tel:+916203715976"
+            class="hover:underline"
+            style="color: var(--accent)"
+            >+91-6203715976</a
+          >
+        </p>
+        <p>
+          🌐
+          <a href="#" class="hover:underline" style="color: var(--accent)"
+            >GitHub Profile</a
+          >
+        </p>
+        <p>
+          🔗
+          <a href="#" class="hover:underline" style="color: var(--accent)"
+            >LinkedIn Profile</a
+          >
+        </p>
+      </section>
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({ duration: 800, once: true });
+
+      // Toggle light/dark mode when logo clicked
+      document.getElementById("logo").addEventListener("click", () => {
+        document.body.classList.toggle("light");
+      });
+
+      // Toggle mobile menu
+      document.getElementById("menuToggle").addEventListener("click", () => {
+        document.getElementById("mobileMenu").classList.toggle("hidden");
+      });
+    </script>
+  </body>
+</html>

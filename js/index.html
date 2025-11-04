@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tier List App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f4f4f4;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .item-pool {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+
+    .item {
+      background-color: #eee;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: grab;
+      border: 1px solid #ccc;
+      user-select: none;
+    }
+
+    .tiers {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .tier {
+      background: #ddd;
+      padding: 15px;
+      min-height: 60px;
+      border-radius: 5px;
+      border: 2px solid #999;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .tier span {
+      font-weight: bold;
+      width: 60px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Tier List</h1>
+
+  <div id="item-pool" class="item-pool">
+    <div class="item" draggable="true">Item 1</div>
+    <div class="item" draggable="true">Item 2</div>
+    <div class="item" draggable="true">Item 3</div>
+    <div class="item" draggable="true">Item 4</div>
+    <div class="item" draggable="true">Item 5</div>
+    <div class="item" draggable="true">Item 6</div>
+    <div class="item" draggable="true">Item 7</div>
+  </div>
+
+  <div class="tiers">
+    <div class="tier" data-tier="S"><span>S Tier</span></div>
+    <div class="tier" data-tier="A"><span>A Tier</span></div>
+    <div class="tier" data-tier="B"><span>B Tier</span></div>
+    <div class="tier" data-tier="C"><span>C Tier</span></div>
+    <div class="tier" data-tier="D"><span>D Tier</span></div>
+  </div>
+
+  <script>
+    const items = document.querySelectorAll('.item');
+    const tiers = document.querySelectorAll('.tier');
+
+    items.forEach(item => {
+      item.addEventListener('dragstart', (e) => {
+        e.dataTransfer.setData('text/plain', item.textContent);
+        item.classList.add('dragging');
+      });
+
+      item.addEventListener('dragend', () => {
+        item.classList.remove('dragging');
+      });
+    });
+
+    tiers.forEach(tier => {
+      tier.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        tier.style.backgroundColor = '#cfc';
+      });
+
+      tier.addEventListener('dragleave', () => {
+        tier.style.backgroundColor = '';
+      });
+
+      tier.addEventListener('drop', (e) => {
+        e.preventDefault();
+        const draggingEl = document.querySelector('.item.dragging');
+        if (draggingEl) {
+          tier.appendChild(draggingEl);
+        }
+        tier.style.backgroundColor = '';
+      });
+    });
+  </script>
+</body>
+</html>

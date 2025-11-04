@@ -1,0 +1,55 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+.screen {
+  display: flex;
+}
+.home {
+  width: 55%;
+  display: flex;
+}
+.half {
+  width: 45%;
+}
+.half img {
+  width: 100%;
+  height: 100vh;
+
+}
+.logo{
+    margin-left: 66px;
+    margin-top: 81px;
+}
+
+.frame5, .frame6 {
+  display: flex;
+  justify-content: space-around;
+}
+.frame6 div{
+    border-radius: 5px;
+    border: 1px solid rgba(51, 51, 51, 0.2);
+    margin-top: 10px;
+    padding:0px 10px;
+}
+.login{
+    color: white;
+    background-color: #FB792B;
+}
+.menu{
+    margin-top: 100px;
+    margin-left: 300px; 
+}
+.headertitle {
+  padding: 30px 50px;
+}
+.headertitle h1 {
+  font-size: 28px;
+}
+.headertitle span {
+  margin-right: 10px;
+  font-weight: bold;
+}
+.safety { color: green; }
+.security { color: orange; }
+.punctuality { color: blue; }

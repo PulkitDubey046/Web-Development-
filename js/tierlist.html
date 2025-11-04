@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tier List App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    #tier {
+      padding: 5px;
+    }
+
+    .tierList {
+      border: 1px solid black;
+      border-radius: 20px;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      margin-top: 1rem;
+      min-height: 100px;
+      background: #f8f8f8;
+    }
+
+    .tierList > h1 {
+      border-right: 1px solid black;
+      padding-right: 1rem;
+      margin-right: 1rem;
+      min-width: 150px;
+    }
+
+    .tierListItems {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      flex-grow: 1;
+      min-height: 80px;
+    }
+
+    .itemContainer {
+      width: 75px;
+      height: 75px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      overflow: hidden;
+      cursor: grab;
+      background: white;
+    }
+
+    .itemContainer > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    #nonTierSection {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+      border: 1px solid black;
+      padding: 1rem;
+      min-height: 100px;
+      background: #f0f0f0;
+    }
+
+    .drag-over {
+      background-color: #d0f0d0 !important;
+    }
+  </style>
+</head>
+<body>
+  <h1>Your own tierlist app...</h1>
+
+  <form id="tierForm">
+    <label for="tier">Tier:</label>
+    <input type="text" name="tier" id="tier" value="Super Hero" placeholder="Give tier name" />
+    <br />
+    <button type="submit">Add Tier</button>
+  </form>
+  <hr>
+
+  <form id="itemForm">
+    <label for="imageItem">Item:</label>
+    <input type="text" name="item" id="imageItem" placeholder="Give item image url" />
+    <br />
+    <button type="submit">Add Item</button>
+  </form>
+  <hr>
+
+  <section id="tierListSection"></section>
+
+  <h2>Unassigned Items</h2>
+  <section id="nonTierSection"></section>
+
+  <script>
+    const tierInput = document.getElementById('tier');
+    const form = document.getElementById('tierForm');
+    const tierSection = document.getElementById('tierListSection');
+    const imageForm = document.getElementById('itemForm');
+    const nonTierSection = document.getElementById('nonTierSection');
+
+    // Handle tier creation
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      createTierList();
+    });
+
+    // Handle image item creation
+    imageForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const imageItemInput = document.getElementById('imageItem');
+      const imageUrl = imageItemInput.value.trim();
+      if (imageUrl) {
+        createTierListItem(imageUrl, nonTierSection);
+        imageItemInput.value = '';
+      }
+    });
+
+    // Create a new tier row
+    function createTierList() {
+      const newTierList = document.createElement('div');
+      newTierList.classList.add('tierList');
+
+      const heading = document.createElement('h1');
+      heading.textContent = tierInput.value || "Untitled Tier";
+
+      const newTierListItems = document.createElement('div');
+      newTierListItems.classList.add('tierListItems');
+
+      // Enable drag-and-drop for tier containers
+      addDropEvents(newTierListItems);
+
+      newTierList.appendChild(heading);
+      newTierList.appendChild(newTierListItems);
+      tierSection.appendChild(newTierList);
+
+      tierInput.value = '';
+    }
+
+    // Create an image item
+    function createTierListItem(imageUrl, container) {
+      const imageDiv = document.createElement('div');
+      imageDiv.classList.add('itemContainer');
+      imageDiv.setAttribute('draggable', 'true');
+
+      const img = document.createElement('img');
+      img.src = imageUrl;
+      imageDiv.appendChild(img);
+
+      // Enable dragging
+      imageDiv.addEventListener('dragstart', dragStart);
+      imageDiv.addEventListener('dragend', dragEnd);
+
+      container.appendChild(imageDiv);
+    }
+
+    // Drag-and-drop events
+    let draggedItem = null;
+
+    function dragStart(e) {
+      draggedItem = this;
+      setTimeout(() => this.style.display = 'none', 0);
+    }
+
+    function dragEnd(e) {
+      draggedItem.style.display = 'block';
+      draggedItem = null;
+    }
+
+    function dragOver(e) {
+      e.preventDefault();
+      this.classList.add('drag-over');
+    }
+
+    function dragEnter(e) {
+      e.preventDefault();
+    }
+
+    function dragLeave(e) {
+      this.classList.remove('drag-over');
+    }
+
+    function drop(e) {
+      this.classList.remove('drag-over');
+      if (draggedItem) {
+        this.appendChild(draggedItem);
+      }
+    }
+
+    function addDropEvents(container) {
+      container.addEventListener('dragover', dragOver);
+      container.addEventListener('dragenter', dragEnter);
+      container.addEventListener('dragleave', dragLeave);
+      container.addEventListener('drop', drop);
+    }
+
+    // Make the "Unassigned Items" section a drop zone too
+    addDropEvents(nonTierSection);
+  </script>
+</body>
+</html>

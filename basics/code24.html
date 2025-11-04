@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navbar Layout</title>
+    <style>
+      body {
+        margin: 0;
+      }
+
+      .navbar {
+        background-color: #2e2b2b;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 40px;
+        color: white;
+      }
+
+      .logo {
+        font-weight: bold;
+        font-size: 18px;
+      }
+
+      .menu {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+      }
+
+      .menu a {
+        text-decoration: none;
+        color: #aaa;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+
+      .menu a.active {
+        color: white;
+      }
+
+      .menu a.button {
+        padding: 8px 16px;
+        border: 1px solid #e1c97a;
+        border-radius: 5px;
+        background-color: transparent;
+        color: #e1c97a;
+      }
+
+      .content {
+        padding: 30px 50px;
+      }
+
+      .content h2 {
+        margin-top: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="logo">LOGO</div>
+      <div class="menu">
+        <a href="#" class="active">Home</a>
+        <a href="#">Pricing</a>
+        <a href="#">Contact</a>
+        <a href="#">Terms and Condition</a>
+        <a href="#" class="button">Get Started</a>
+      </div>
+    </div>
+
+    <div class="content">
+      <h2>Heading 1</h2>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas magni
+        laborum est eaque alias distinctio hic sequi aspernatur laudantium unde
+        sint non inventore possimus praesentium odio ut exercitationem,
+        excepturi iure officia quis eos. Sed minima, deserunt expedita excepturi
+        saepe nisi.
+      </p>
+
+      <h2>Heading 2</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum aut
+        ducimus saepe et ut temporibus consectetur praesentium adipisci,
+        expedita perspiciatis maxime veritatis, facere labore nobis eius magnam
+        placeat aperiam beatae aliquid officia? Accusamus, repudiandae soluta!
+        Saepe fugiat aspernatur eos impedit.
+      </p>
+
+      <h2>Heading 3</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque illo
+        optio quos aliquam impedit asperiores! Possimus minima labore dolore
+        voluptatibus ipsa temporibus dicta eaque odit quia tenetur iure ipsam
+        molestias sed similique, in quas eos tempora est asperiores harum
+        distinctio?
+      </p>
+    </div>
+  </body>
+</html>

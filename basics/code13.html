@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Registration Form – Bholenath Computer Academy</title>
+  <style>
+    /* 🎨 Custom Color Palette */
+    :root {
+      --primary-color: #1abc9c;
+      --secondary-color: #1fa016;
+      --accent-color: #82745e;
+      --background-light: #f8febb;
+      --text-dark: #0d0d0e;
+    }
+    
+    body {
+      font-family: Arial, sans-serif;
+      background-color: var(--background-light);
+      margin: 0;
+      padding: 40px;
+    }
+
+    h2 {
+      text-align: center;
+      color: var(--text-dark);
+    }
+
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: var(--text-dark);
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid var(--secondary-color);
+      border-radius: 5px;
+      background-color: var(--background-light);
+      color: var(--text-dark);
+    }
+
+    input[type="submit"] {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: var(--secondary-color);
+    }
+
+    /* 🎯 Opacity section */
+    .form-group--faded {
+      opacity: 0.6;
+      background-color: #fff9e6;
+      padding: 10px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Student Registration - Bholenath Computer Academy</h2>
+
+  <form>
+    <div class="form-group">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" placeholder="Enter your full name">
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email">
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" placeholder="Enter your contact number">
+    </div>
+
+    <div class="form-group form-group--faded">
+      <label for="dob">Date of Birth</label>
+      <input type="date" id="dob" name="dob">
+    </div>
+
+    <div class="form-group">
+      <label for="course">Select Course</label>
+      <select id="course" name="course">
+        <option value="">-- Select --</option>
+        <option value="adca">ADCA</option>
+        <option value="dca">DCA</option>
+        <option value="webdev">Web Development</option>
+        <option value="python">Python Programming</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="message">Why do you want to join?</label>
+      <textarea id="message" name="message" rows="4" placeholder="Tell us something..."></textarea>
+    </div>
+
+    <input type="submit" value="Register Now">
+  </form>
+
+</body>
+</html>

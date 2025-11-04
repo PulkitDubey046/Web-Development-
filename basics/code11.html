@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adding CSS to our web-page</title>
+    <!-- 2. Internal CSS -->
+    <style>
+      #inter {
+        color: orange;
+        text-transform: uppercase;
+        text-decoration: underline red wavy 1px;
+        line-height: 50px;
+      }
+
+      #all{
+        color: red;
+      }
+    </style>
+    <link rel="stylesheet" href="code11.css" />
+  </head>
+  <body>
+    <!-- 1. Inline CSS -->
+    <div style="color: brown; font-size: xx-large">Pulkit Dubey</div>
+
+    <!-- 2. Internal CSS using id-->
+    <div id="inter">Pulkit Dubey</div>
+
+    <!-- 3. External CSS -->
+    <div id="exter">Pulkit Dubey</div>
+
+    <!-- targeting the same elements with inline, internal, and external CSS -->
+    <div
+      id="all"
+      style="font-size: 40px; color: black; text-shadow: 2px 2px 2px orange; line-height: 150px;"
+    >
+      Bholenath Computer Academy
+    </div>
+  </body>
+</html>

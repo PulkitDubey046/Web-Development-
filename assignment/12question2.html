@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 2</title>
+    <style>
+        .gallery{
+            width: 100vw;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+        }
+        .photo{
+            width: 100%;
+        }
+        @media screen and (max-width:800px) {
+            .gallery{
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media screen and (max-width:500px) {
+            .gallery{
+                grid-template-columns:1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="gallery">
+        <img class="photo photo1" src="https://fastly.picsum.photos/id/27/200/300.jpg?hmac=cxfyms4Ce9ExYqZqSCKEppGQpmi8rRNNaf46Lwr5iqA" alt="img">
+        <img class="photo photo2" src="https://fastly.picsum.photos/id/27/200/300.jpg?hmac=cxfyms4Ce9ExYqZqSCKEppGQpmi8rRNNaf46Lwr5iqA" alt="img">
+        <img class="photo photo3" src="https://fastly.picsum.photos/id/27/200/300.jpg?hmac=cxfyms4Ce9ExYqZqSCKEppGQpmi8rRNNaf46Lwr5iqA" alt="img"> 
+    </div>
+</body>
+</html>
