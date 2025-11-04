@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        #parent{
+            width: 500px;
+            height: 500px;
+            display: flex;
+            justify-content:center;
+            align-items: center;
+            background-color: blue
+        }
+    #line{
+        height: 5px;
+        width: 80px;
+        background-color: black;
+    }
+      #red {
+        width: 100px;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        background-color: red;
+        align-items: center;
+        border: 5px solid black;
+        border-radius: 100%;
+        /* both togther */
+        /* transform: translate(120px, 20px); */
+        transform: scaleX(2);
+      }
+    </style>
+  </head>   
+  <body>
+    <div id="parent">
+      <div id="red">
+        <div id="line"></div>
+      </div>
+    </div>
+  </body>
+</html>

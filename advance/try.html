@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Image Carousel</title>
+  <style>
+    #carousel {
+      text-align: center;
+      margin-top: 30px;
+    }
+    img {
+      width: 300px;
+      height: 200px;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+    }
+    .btn {
+      margin: 15px 10px;
+      padding: 8px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h2>Simple Image Carousel</h2>
+  <div id="carousel">
+    <button class="btn" id="prevBtn">Previous</button>
+    <img id="carouselImg" src="https://cdn.3dnames.co/previews/ps31/1000x1000/p/ps31pulkit3dxx.webp" alt="carousel image">
+    <button class="btn" id="nextBtn">Next</button>
+  </div>
+
+  <script>
+    const images = [
+      "https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9SRRmhH4X5N2e4QalcoxVbzYsD44C-sQv-w&s",
+      "https://thumbs.dreamstime.com/b/beautiful-peacock-eyes-close-up-view-displaying-vibrant-feathers-plumage-showcases-deep-blues-greens-iridescent-363168308.jpg"
+    ];
+    let currentIndex = 0;
+    const carouselImg = document.getElementById('carouselImg');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+
+    function showImage(index) {
+      carouselImg.src = images[index];
+    }
+
+    prevBtn.addEventListener('click', function() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      showImage(currentIndex);
+    });
+
+    nextBtn.addEventListener('click', function() {
+      currentIndex = (currentIndex + 1) % images.length;
+      showImage(currentIndex);
+    });
+
+    setInterval(function() {
+      currentIndex = (currentIndex + 1) % images.length;
+      showImage(currentIndex);
+    }, 3000);
+  </script>
+</body>
+</html>

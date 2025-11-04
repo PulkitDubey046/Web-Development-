@@ -1,0 +1,31 @@
+ul a{
+    color: red;
+}
+nav>h2{
+    color: red;
+    background-color: yellow;
+}
+nav>p:first-of-type{
+    color: red;
+}
+a[href]{
+    color: red;
+    text-decoration: none;
+}
+a[class="active"] {
+    color: green;
+    text-decoration: underline;
+}
+a[target="_self"]{
+    background-color: rgb(215, 243, 174);
+}
+p:last-of-type::after {
+    content: "...";
+}
+ul {
+    color: blue;
+}
+p:nth-of-type(2)::first-letter {
+    color: red;
+    font-size: 30px;
+}

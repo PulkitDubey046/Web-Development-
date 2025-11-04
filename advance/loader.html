@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: aliceblue;
+        }
+        .loader{
+            width: 50px;
+            height: 50px;
+            margin: 20px;
+        }
+        #loader1{       
+            border: 8px solid #f3f3f3;
+            border-top: 8px solid #3498db;
+            border-radius: 50%;
+            animation: spin 2s linear infinite;
+        }
+        @keyframes spin {
+            0%{
+                transform: rotate(0deg);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+
+        #loader2{
+            background-color: #3498db;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%{
+                transform: scale(0.8);
+            }
+            50%{
+                transform: scale(1);
+            }
+            100%{
+                transform: scale(0.8);
+            }
+        }
+
+
+        #loader3{
+            background-color: #3498db;
+            border-radius: 50%;
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 100%{
+                transform: translateY(0);
+            }
+            50%{
+                transform: translateY(-20px);
+            }
+        }
+        #loader4{
+            display: flex;
+            justify-content: space-around;
+        }  
+        #loader4::before, #loader4::after{
+            content: '';
+            width: 8px;
+            background-color: #3498db;
+            /* border-radius: 50%; */
+            animation: stretch 3s infinite;
+        }
+        #loader4::after{
+            animation-delay: -0.6s;
+        }
+        @keyframes stretch {
+            0%,40%,100%{
+                transform: scaleY(0.4);
+            }
+            20%,60%{
+                transform: scaleY(1);
+            }
+        }
+
+
+        #loader5{
+            display: flex;
+            justify-content: space-around;
+        }
+        #loader5::before,#loader5::after{
+            content: '';
+            width: 8px;
+            height: 8px;
+            background-color: #3498db;
+            border-radius: 50%;
+            animation: dots 2s ease-in-out infinite;
+        }
+        #loader5::after{
+            animation-delay: -0.6s;
+        }
+        @keyframes dots {
+            0%,80%,100%{
+                transform: scale(0);
+            }
+            40%{
+                transform: scale(1);
+            }
+        }
+
+        #loader6{
+            border-radius: 50%;
+            border: 8px solid transparent;
+            border-top: 8px solid #3498db;
+            border-bottom: 8px solid #3498db;
+            animation: circle-fade 2s infinite;
+        }
+        @keyframes circle-fade {
+            0%,80%,100%{
+                opacity: 0;
+            }
+            40%{
+                opacity: 1;
+            }
+        }
+
+        #loader7{
+            width: 60px;
+            height: 60px;
+            border: 8px solid #3498db;
+            border-radius: 50%;
+            border-top: 8px solid transparent;
+            animation: dual-ring 1.5s infinite;
+        }
+        @keyframes dual-ring {
+            0%{
+                transform:rotate(0deg);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+
+        #loader8{
+            background-color: #3498db;
+            animation: square 1.5s ease-in-out infinite;
+        }
+        @keyframes square {
+            0%,100%{
+                transform: scale(1);
+            }
+            50%{
+                transform: scale(0.5);
+            }
+        }
+
+
+        #loader9{
+            display: flex;
+            justify-content: space-around;
+        }
+        #loader9::before, #loader9::after, #loader9 div{
+            content: '';
+            width: 8px;
+            height: 8px;
+            background-color: #3498db;
+            border-radius: 50%;
+            animation: roller 1.2s ease-in-out infinite;
+        }
+        #loader9 div{
+            animation-delay: -0.12s;
+        }
+        #loader9::after{
+            animation-delay: -0.24s;
+        }
+        @keyframes roller {
+            0%{
+                transform: scale(0);
+            }
+            100%{
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="loader" id="loader1"></div>
+    <div class="loader" id="loader2"></div>
+    <div class="loader" id="loader3"></div>
+    <div class="loader" id="loader4"></div>
+    <div class="loader" id="loader5"></div>
+    <div class="loader" id="loader6"></div>
+    <div class="loader" id="loader7"></div>
+    <div class="loader" id="loader8"></div>
+    <div class="loader" id="loader9"><div></div></div>
+    <div class="loader" id="loader10"></div>
+</body>
+</html>
